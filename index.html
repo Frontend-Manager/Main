@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FZBillinG</title>
+    <link rel="stylesheet" href="css/css.css"> <!-- Link to external CSS -->
+    <link rel="icon" type="image/x-icon" href="images/FZBillinG Logo1.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <img src="images/FZBillinG Logo.png" alt="Brand Logo" class="logo">
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#products">Products</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero" style="background-image: url(images/bg2.jpg);">
+    
+        <h1>Welcome To FZBillinG</h1>
+        <p>We Provide The Best Products And Services For Your Business Needs.</p>
+        <br>
+        <button class="demo-btn" onclick="openPopup()">Demo</button>
+        
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about-us">
+        <h2>About Us</h2>
+        <p>At FZBillinG, we are pioneers in transforming the restaurant industry through cutting-edge technology. Founded by Faiz Shaikh, our mission is to empower businesses with advanced solutions that streamline operations and enhance customer experiences.
+
+            We specialize in digital menu systems, innovative billing solutions, and data-driven insights that drive efficiency and growth. Our tools are built to optimize performance and create a smarter, more connected dining experience.
+            
+            FZBillinG is not just a service — it's the future of restaurant technology. Join us as we lead the way into a new era of dining innovation.</p>
+    </section>
+
+    <!-- Founder Section -->
+    <section id="founder" class="founder">
+        <div class="founder-content">
+            <img src="images/Founder.png" alt="Founder Image" class="founder-img">
+            <div class="founder-info">
+                <h2>About the Founder</h2>
+                <br>
+                <p>Faiz Shaikh, The Visionary Behind Our Restaurant Tech Solutions Company, Has Dedicated His Career...</p>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Popup Window -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <img src="images/VM.jpg" alt="QR Code" class="qr-img">
+            <a href="http://virtualmenu.fzbilling.tech/">virtualmenu.fzbilling.tech</a>
+            <p>Scan this QR code to access the demo...</p>
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <h2>Our Products</h2>
+        <div class="product-grid">
+            <div class="product-item">
+                <img src="images/robo1.jpg" alt="Product 1">
+                <h3>Ai Serving</h3>
+                <p>Future Project</p>
+            </div>
+            <div class="product-item">
+                <img src="images/vrm.jpg" alt="Product 2">
+                <img src="images/scan.jpg" alt="Product 2">
+                <h3>Digital Menu</h3>
+                <p>Effortless Ordering, Perfect Dining</p>
+            </div> 
+
+            <div class="product-item">
+                <img src="images/bill.jpg" alt="Product 4">
+                <img src="images/dashboard.jpg" alt="Product 4">
+                <h3>POS Software</h3>
+                <br>
+                <p>Simplify Your Billing, Amplify Your Business</p>
+            </div>
+
+            <div class="product-item">
+                <img src="images/Whatsapp Bulk.jpg" alt="Product 3">
+                <h3>Whatsapp Bulk Msg Service</h3>
+                <p>Help To Get More Customer</p>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <!-- Form for Scheduling Demo -->
+        <form action="https://formspree.io/f/xnnaylbo" method="POST">
+            <div class="form-content">
+                <h2>Schedule a Free Demo</h2>
+                <p>Get In Touch With Our Team To Clarify Your Queries</p>
+
+                <div class="form-group">
+                    <label for="name">Name*</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group double">
+                    <div>
+                        <label for="phone">Phone Number*</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div>
+                        <label for="city">City*</label>
+                        <input type="text" id="city" name="city" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail*</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="restaurant">Restaurant Name*</label>
+                    <input type="text" id="restaurant" name="restaurant" required>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit</button>
+            </div>
+        </form>
+    </section>
+    
+    
+    
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 FZBillinG. All Rights Reserved.</p>
+        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </footer>
+
+    <script src="js/js.js"></script> <!-- Link to external JS -->
+</body>
+</html>

@@ -1,0 +1,590 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    scroll-behavior: smooth;
+    color: #4C2E1F; /* Main text color */
+    background-color: #F2E0C9; /* Light background */
+}
+
+/* Header */
+header {
+    background: linear-gradient(45deg, #F2E0C9, orange);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #F2E0C9;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Adding shadow to header */
+    border: 2px solid black;
+}
+.logo {
+    width: 150px;
+}
+/* General navigation styling */
+nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+nav a {
+    color: #F2E0C9;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 24px; /* Adjusted padding for better balance */
+    border-radius: 30px; /* Slightly larger for a more button-like look */
+    transition: all 0.4s ease-in-out;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    white-space: nowrap; /* Ensures text stays on one line */
+    letter-spacing: 1px; /* Slight spacing for a more modern look */
+    outline: none; /* Removes the default blue focus box */
+}
+
+/* Hover effect with smoother transition and background scaling */
+nav a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2); /* Hover background effect */
+    transition: transform 0.5s ease;
+    transform: scaleX(0);
+    transform-origin: left;
+    z-index: -1;
+}
+
+nav a:hover::before {
+    transform: scaleX(1); /* Hover effect expands the background */
+}
+
+nav a:hover {
+    color: #4C2E1F; /* Text color changes on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Larger shadow for depth */
+    transform: scale(1.07); /* Slight zoom for a dynamic feel */
+}
+
+/* Custom focus state (optional) */
+nav a:focus {
+    outline: none; /* Removes the default focus box */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Custom focus effect */
+    background-color: rgba(255, 255, 255, 0.15); /* Light background on focus */
+}
+
+/* Ensuring that "About Us" fits well on one line */
+nav a[href*="About Us"] {
+    white-space: nowrap;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+    }
+}
+
+
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #4C2E1F;
+    color: rgb(247, 146, 64);;
+    text-align: center;
+    padding: 20px;
+    background-image: url('images/bg.jpg'); /* Add a subtle background image for better visual effect */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+.hero h1 {
+    font-size: 4em;
+    margin-bottom: 20px;
+    letter-spacing: 2px; /* Enhance typography */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+}
+.hero p {
+    font-size: 1.5em;
+    max-width: 600px;
+}
+.btn {
+    background-color: #ff4500;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Button shadow */
+}
+.btn:hover {
+    background-color: #ff8c00;
+    transform: scale(1.05); /* Slight grow on hover */
+}
+
+/* About Us Section */
+.about-us {
+    padding: 50px;
+    background: url('path/to/your/image.jpg') no-repeat center center;
+    background-size: cover; /* Ensures the image covers the whole section */
+    color: #4C2E1F;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif; /* Sleek and professional font */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    position: relative; /* Allows for absolutely positioned elements */
+    overflow: hidden; /* Ensures content doesn't overflow */
+}
+
+/* Overlay for better text visibility */
+.about-us::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+    z-index: 1; /* Ensures the overlay is above the background but below the text */
+}
+
+/* Adjust text position */
+.about-us h2,
+.about-us p {
+    position: relative; /* Ensures text is above the overlay */
+    z-index: 2; /* Brings text above the overlay */
+}
+
+/* Heading Styling */
+.about-us h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif; /* Elegant serif font for headings */
+    color: #4C2E1F;
+    text-transform: uppercase; /* Capitalizes the heading */
+    letter-spacing: 2px; /* Adds some spacing for a modern look */
+    font-weight: 700; /* Bold for better emphasis */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adds a shadow for better visibility */
+}
+
+/* Paragraph Styling */
+.about-us p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8; /* Improves readability */
+    text-align: justify; /* Neat alignment for the text */
+    color: #4C2E1F;
+    padding: 0 20px; /* Adds padding for better spacing */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow for better readability */
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+    .about-us h2 {
+        font-size: 2.5em;
+    }
+    .about-us p {
+        font-size: 1.1em;
+        padding: 0 15px;
+    }
+}
+@media (max-width: 480px) {
+    .about-us h2 {
+        font-size: 2em;
+    }
+    .about-us p {
+        font-size: 1em;
+        padding: 0 10px; /* Adjust padding for smaller screens */
+    }
+}
+
+
+
+
+/* Products Section */
+.products {
+    padding: 50px;
+    background-color: #F2E0C9;
+    color: #4C2E1F;
+    text-align: center;
+}
+.products h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+.product-item {
+    background-color: #4C2E1F;
+    color: #F2E0C9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.product-item img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+.product-item h3 {
+    margin-top: 10px;
+    font-size: 1.5em;
+}
+.product-item:hover {
+    transform: translateY(-10px); /* Float effect */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+footer {
+    background-color: #4C2E1F;
+    color: #F2E0C9;
+    padding: 20px;
+    text-align: center;
+}
+footer a {
+    color: #F2E0C9;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    /* Responsive typography */
+    .hero h1 {
+        font-size: 2.5em;
+    }
+    .hero p {
+        font-size: 1.2em;
+    }
+    .btn {
+        padding: 8px 16px;
+    }
+
+    /* Header responsiveness */
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* About Us and Products padding adjustments */
+    .about-us, .products {
+        padding: 30px;
+    }
+
+    /* Responsive Product Grid */
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2em;
+    }
+    .hero p {
+        font-size: 1em;
+    }
+    .btn {
+        padding: 6px 12px;
+    }
+}
+html {
+    scroll-behavior: smooth;
+}
+
+.founder {
+    background-color: #F2E0C9; /* Light background to highlight the section */
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.founder-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    
+}
+
+.founder-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #4C2E1F; /* Border matching the theme color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for a more refined look */
+    margin-bottom: 20px;
+}
+
+.founder-info {
+    background: #4C2E1F; /* Dark background for the description area */
+    color: #F2E0C9; /* Light text color for contrast */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.founder-info h2 {
+    margin-top: 0;
+}
+
+.founder-info p {
+    margin-bottom: 10px; /* Adjusted margin for spacing */
+}
+
+.founder-email {
+    font-size: 1.1em;
+}
+
+.founder-email a {
+    color: #F2E0C9; /* Light color for the email link */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.founder-email a:hover {
+    text-decoration: underline; /* Underline on hover for better accessibility */
+}
+
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+
+.popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    max-width: 500px;
+    width: 90%;
+}
+
+.qr-img {
+    width: 200px; /* Adjust size as needed */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #4C2E1F;
+}
+
+.close-btn:hover {
+    color: #D4B57E; /* Change color on hover */
+}
+
+.popup p {
+    margin: 0;
+}
+
+/* Enhancing responsiveness for mobile view */
+.form-container {
+    display: flex;
+    flex-direction: column; /* Stack form and image on mobile */
+    align-items: center;
+    background-color: #F2E0C9; /* Matches your theme */
+    border-radius: 12px; /* Smoother rounded corners */
+    padding: 20px; /* Smaller padding on mobile */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Soft shadow for better contrast */
+    max-width: 100%; /* Adjusts to mobile screen size */
+    margin: 20px auto; /* Reduced margin for mobile */
+}
+
+.form-content {
+    width: 100%; /* Full width on mobile */
+    margin-bottom: 20px; /* Space between form and image */
+}
+
+.form-content h2 {
+    font-size: 24px; /* Slightly smaller heading for mobile */
+    color: #4C2E1F; /* Dark brown theme */
+    margin-bottom: 10px;
+}
+
+.form-content p {
+    color: #8F7762; /* Subtle text color */
+    margin-bottom: 20px;
+    font-size: 14px; /* Smaller text for mobile */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Reduced margin for compact design */
+}
+
+.double {
+    display: flex;
+    flex-direction: row; /* Stack inputs on mobile */
+    gap: 10px; /* Smaller gap */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #4C2E1F;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    width: 100%;
+    padding: 12px 15px; /* Adjusted padding for better mobile interaction */
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus {
+    border-color: #4C2E1F;
+    outline: none;
+}
+
+.submit-btn {
+    padding: 10px 30px; /* Smaller padding for mobile */
+    background-color: #C73633;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px; /* Reduced button text size */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Full width button on mobile */
+}
+
+.submit-btn:hover {
+    background-color: #B22222;
+}
+
+.image-content {
+    width: 100%; /* Full width on mobile */
+    margin-top: 20px; /* Space between form and image */
+}
+
+.image-content img {
+    width: 100%; /* Ensure the image scales to mobile */
+    border-radius: 8px;
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+    .form-container {
+        flex-direction: row; /* Side by side layout on larger screens */
+        padding: 40px;
+    }
+
+    .form-content {
+        margin-right: 30px;
+    }
+
+    .submit-btn {
+        width: auto; /* Standard button size for larger screens */
+    }
+}
+
+
+.demo-btn {
+    background-color: #ff4500;  /* Vibrant orange color */
+    color: #fff;  /* White text */
+    padding: 12px 30px;  /* Comfortable padding for a clickable area */
+    font-size: 1.2rem;  /* Slightly larger text for emphasis */
+    font-weight: bold;  /* Bold text */
+    border-radius: 30px;  /* Rounded corners for a modern look */
+    border: none;  /* Remove default border */
+    cursor: pointer;  /* Pointer cursor for clarity */
+    transition: all 0.3s ease-in-out;  /* Smooth transition for hover effects */
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.5px;  /* Adds slight spacing between letters */
+}
+
+/* Button hover effect */
+.demo-btn:hover {
+    background-color: #ff8c00;  /* Lighter orange on hover */
+    transform: scale(1.05);  /* Slight zoom effect */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);  /* Subtle shadow for depth */
+}
+
+/* Button click effect */
+.demo-btn:active {
+    transform: scale(0.98);  /* Shrinks slightly on click */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);  /* Reduced shadow */
+}
+
+/* Button hover background animation */
+.demo-btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.6s ease-in-out;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.demo-btn:hover::before {
+    transform: translate(-50%, -50%) scale(1);  /* Expands on hover */
+}
+
+.demo-btn span {
+    position: relative;
+    z-index: 1;  /* Ensures text stays above the background animation */
+}
+
